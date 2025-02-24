@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+    <style>
+        /* Background styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('https://images.pexels.com/photos/1103970/pexels-photo-1103970.jpeg?auto=compress&cs=tinysrgb&w=1920') no-repeat center center/cover;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Glassmorphism effect for table */
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.2); /* Transparent white */
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        th, td {
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background: rgba(0, 0, 0, 0.5);
+            color: #ff9800;
+            font-size: 18px;
+        }
+
+        td {
+            font-size: 16px;
+            color: black; /* Changed text color to black */
+            background: rgba(255, 255, 255, 0.6); /* Light background for better readability */
+        }
+
+        /* Hover effect */
+        tr:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transition: 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Contact Type</th>
+            <th>Details</th>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td>Deepesh Kumar & Lakshya  Mittal </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>2024pceacydeepesh20@poornima.org</td>
+        </tr>
+        <tr>
+            <td>Phone</td>
+            <td>+91 6375808725</td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td>Poornima College of Engineering</td>
+        </tr>
+    </table>
+</body>
+</html>

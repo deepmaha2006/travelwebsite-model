@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up & Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url(https://images.pexels.com/photos/1631677/pexels-photo-1631677.jpeg?auto=compress&cs=tinysrgb&w=600);
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .toggle-btn {
+            margin-bottom: 20px;
+        }
+        .form {
+            display: none;
+        }
+        .form.active {
+            display: block;
+        }
+        input[type="text"], input[type="password"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #28a745;
+            color: #fff;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="toggle-btn">
+            <button onclick="showForm('login')">Login</button>
+            <button onclick="showForm('signup')">Sign Up</button>
+        </div>
+        <div id="login" class="form active">
+            <h2>Login</h2>
+            <input type="text" id="loginUsername" placeholder="Username" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="validateForm('login')">Login</button>
+        </div>
+        <div id="signup" class="form">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button onclick="validateForm('signup')">Sign Up</button>
+        </div>
+    </div>
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll('.form').forEach(form => {
+                form.classList.remove('active');
+            });
+            document.getElementById(formId).classList.add('active');
+        }
+
+        function validateForm(formType) {
+            let username, password, email;
+            if (formType === 'login') {
+                username = document.getElementById('loginUsername').value;
+                password = document.getElementById('loginPassword').value;
+                if (!username || !password) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+            } else {
+                username = document.getElementById('signupUsername').value;
+                email = document.getElementById('signupEmail').value;
+                password = document.getElementById('signupPassword').value;
+                if (!username || !email || !password) {
+                    alert('Please fill the all fields.');
+                    return;
+                }
+            }
+            redirect();
+        }
+
+        function redirect() {
+            window.location.href = "travel.html";
+        }
+    </script>
+</body>
+</html>
